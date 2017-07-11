@@ -78,6 +78,7 @@ object ProtocPlugin extends AutoPlugin with Compat {
     ),
     PB.recompile := {
       import CacheArguments.instance
+      println(implicitly[sjsonnew.JsonFormat[ProtocPlugin.Arguments]].getClass.getName)
       arguments.previous.exists(_ != arguments.value)
     },
     PB.protocOptions := Nil,
